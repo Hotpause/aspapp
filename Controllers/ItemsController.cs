@@ -28,7 +28,9 @@ namespace MyApp.Controllers
 
         public IActionResult Create()
         {
-            ViewData["Categories"] = new SelectList(_context.Categories, "Id", "Name");
+            ViewData["Categories"] = new SelectList(new[] { 
+                new { Id = 1, Name = "Test Category" }
+            }, "Id", "Name");
             return View();
         }
 
